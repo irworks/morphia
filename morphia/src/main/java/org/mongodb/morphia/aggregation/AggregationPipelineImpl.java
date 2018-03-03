@@ -217,6 +217,12 @@ public class AggregationPipelineImpl implements AggregationPipeline {
         return this;
     }
 
+    @Override
+    public AggregationPipeline sample(final int size) {
+        stages.add(new BasicDBObject("$sample", new BasicDBObject("size", size)));
+        return this;
+    }
+
     /**
      * Converts a Projection to a DBObject for use by the Java driver.
      *

@@ -225,4 +225,13 @@ public interface AggregationPipeline {
      * @mongodb.driver.manual reference/operator/aggregation/unwind $unwind
      */
     AggregationPipeline unwind(String field);
+
+    /**
+     * Find random documents in the collection, amount specified by the size operator.
+     *
+     * @param size positive integer
+     * @return this
+     * @mongodb.driver.manual reference/operator/aggregation/sample $sample
+     */
+    AggregationPipeline sample(int size);
 }
